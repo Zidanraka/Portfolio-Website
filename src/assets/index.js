@@ -23,6 +23,7 @@ import photoshop from './tech/photoshop.png';
 
 import moksa from './company/moksa.png'
 import kominfo from './company/kominfo.png'
+import napindo from './company/napindo.jpg'
 
 import tiketkapal from './tiketkapal.png';
 import craigadventure from './craigadventure.webp'
@@ -53,6 +54,7 @@ export {
   photoshop,
   moksa,
   kominfo,
+  napindo,
   tiketkapal,
   craigadventure,
   sambalbini,

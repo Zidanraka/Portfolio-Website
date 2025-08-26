@@ -17,6 +17,7 @@ import {
     photoshop,
     moksa,
     kominfo,
+    napindo,
     tiketkapal,
     craigadventure,
     sambalbini,
@@ -141,7 +142,7 @@ import {
     {
       title: "Database",
       company_name: "PT. Napindo Media Ashatama",
-      icon: moksa,
+      icon: napindo,
       iconBg: "#E6DEDD",
       date: "Jun 2025 - Present",
       points: [

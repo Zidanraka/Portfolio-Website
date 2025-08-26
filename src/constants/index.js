@@ -127,7 +127,7 @@ import {
       company_name: "Moksa",
       icon: moksa,
       iconBg: "#E6DEDD",
-      date: "Jun 2024 - Present",
+      date: "Jun 2024 - Jun 2025",
       points: [
         "Developed and maintained both frontend and backend components of web applications.",
         "Built responsive, user-friendly interfaces using HTML, CSS, and JavaScript.",
@@ -136,6 +136,19 @@ import {
         "Implemented user management systems with authentication and authorization.",
         "Developed an article posting platform with features like article creation, editing, and deletion.",
         "Ensured seamless integration between frontend and backend services via APIs.",
+      ],
+    },
+    {
+      title: "Database",
+      company_name: "PT. Napindo Media Ashatama",
+      icon: moksa,
+      iconBg: "#E6DEDD",
+      date: "Jun 2025 - Present",
+      points: [
+        "Update and maintain database records related to visitors, exhibitors, and internal staff.",
+        "Conduct routine updates on the SQL Server such as data correction, backup scheduling, and restoring backups.",
+        "Modify Visual Basic source code to fix bugs, apply interface changes, or adjust database connection settings.",
+        "Assist in generating reports and printing exhibition labels using Crystal Reports.",
       ],
     },
   ];

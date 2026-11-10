@@ -17,13 +17,13 @@ const Hero = () => {
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>Hi, i'm <span className='text-[#915eff]'>Zidan</span></h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            {reduceMotion ? 'I am a Web Developer' : <TypeAnimation
+            {reduceMotion ? 'I am a Software Engineer' : <TypeAnimation
               sequence={[
-                  'I am a Web Developer',
-                  3000,
-                  'I am a UI/UX Designer',
+                  'I am a Software Engineer',
                   3000,
                   'I am a Database Engineer',
+                  3000,
+                  'I am a UI/UX Designer',
                   3000,
               ]}
               wrapper="span"

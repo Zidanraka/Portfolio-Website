@@ -3,26 +3,25 @@ import {
     backend,
     creator,
     web,
+    next,
+    nuxt,
+    electron,
+    reactjs,
+    vite,
+    vue,
+    node,
     javascript,
     typescript,
-    html,
-    css,
-    reactjs,
-    tailwind,
-    git,
-    figma,
-    mysql,
-    bootstrap,
-    canva,
-    photoshop,
-    moksa,
-    kominfo,
-    napindo,
-    tiketkapal,
-    craigadventure,
-    sambalbini,
-    moksaproject,
     threejs,
+    tailwind,
+    postgresql,
+    mysql,
+    napindo,
+    dealvise,
+    craigadventure,
+    moksaproject,
+    desktopnapindo,
+    newsportal,
   } from "../assets";
   
   export const navLinks = [
@@ -42,91 +41,79 @@ import {
   
   const services = [
     {
-      title: "Web Developer",
+      title: "Software Engineer",
       icon: web,
     },
     {
-      title: "UI/UX Designer",
+      title: "Database Engineer",
       icon: mobile,
     },
     {
-      title: "Database Engineer",
+      title: "UI/UX Designer",
       icon: backend,
     },
   ];
   
   const technologies = [
     {
-      name: "HTML 5",
-      icon: html,
+      name: "Next.js",
+      icon: next,
     },
     {
-      name: "CSS 3",
-      icon: css,
+      name: "Nuxt.js",
+      icon: nuxt,
     },
     {
-      name: "JavaScript",
-      icon: javascript,
-    },
-    {
-      name: "TypeScript",
-      icon: typescript,
+      name: "Electron.js",
+      icon: electron,
     },
     {
       name: "React JS",
       icon: reactjs,
     },
     {
-      name: "Bootstrap",
-      icon: bootstrap,
+      name: "Vite.js",
+      icon: vite,
     },
     {
-      name: "Tailwind CSS",
-      icon: tailwind,
+      name: "Vue.js",
+      icon: vue,
     },
     {
-      name: "MySQL",
-      icon: mysql,
+      name: "Node.js",
+      icon: node,
     },
     {
-      name: "Photoshop",
-      icon: photoshop,
+      name: "Javascript",
+      icon: javascript,
+    },
+    {
+      name: "Typescript",
+      icon: typescript,
     },
     {
       name: "Three JS",
       icon: threejs,
     },
     {
-      name: "git",
-      icon: git,
+      name: "Tailwind",
+      icon: tailwind,
     },
     {
-      name: "figma",
-      icon: figma,
+      name: "PostgreSQL",
+      icon: postgresql,
     },
     {
-      name: "Canva",
-      icon: canva,
+      name: "MySQL",
+      icon: mysql,
     },
   ];
   
   const experiences = [
     {
-      title: "Event Organizer (Freelance)",
-      company_name: "Kominfo",
-      icon: kominfo,
-      iconBg: "#383E56",
-      date: "Dec 2021 - Dec 2021",
-      points: [
-        "Responsible for Guest COVID Test Activities, before entering the main building Smart City.",
-        "Maximizing the guard of the Crew Reporter from Kominfo.",
-        "Success to Achieved Handling 900 Merchandise for Guests.",
-      ],
-    },
-    {
       title: "Web Developer",
-      company_name: "Moksa",
-      icon: moksa,
+      company_name: "Dealvise",
+      icon: dealvise,
       iconBg: "#E6DEDD",
       date: "Jun 2024 - Jun 2025",
       points: [
@@ -140,70 +127,78 @@ import {
       ],
     },
     {
-      title: "Database",
+      title: "Software and Database Engineer",
       company_name: "PT. Napindo Media Ashatama",
       icon: napindo,
       iconBg: "#E6DEDD",
-      date: "Jun 2025 - Present",
+      date: "Aug 2025 - Present",
       points: [
-        "Update and maintain database records related to visitors, exhibitors, and internal staff.",
-        "Conduct routine updates on the SQL Server such as data correction, backup scheduling, and restoring backups.",
-        "Modify Visual Basic source code to fix bugs, apply interface changes, or adjust database connection settings.",
-        "Assist in generating reports and printing exhibition labels using Crystal Reports.",
+        "Update and maintain database records related to visitors, exhibitors, and internal staffBuilt a full desktop application from scratch for data entry, search, reporting, and label printing (exhibitors & visitors).",
+        "Developed Electron and React UI with form validation, role-based menus (Admin vs Limited), and guided user workflows.",
+        "Implemented backend services using Express and Prisma, integrating PostgreSQL for persistent storage.",
+        "Delivered reporting and label exports via jsreport (PDF / Excel / Word) for operational needs.",
+        "Designed Excel import flow with field mapping, validation, and audit logging to reduce input risk.",
+        "Integrated Electron IPC, preload bridge to connect UI and backend securely.",
+        "Implemented authentication, access control, and audit logs for critical actions and traceability.",
+        "Packaged and released Windows builds with auto-update support (LAN/offline update distribution).",
+        "Maintained and updated SQL Server records for visitors, exhibitors, and internal staff, including routine data correction, backup scheduling, and restore procedures.",
       ],
     },
   ];
   
   const projects = [
     {
-      name: "Craig Adventure",
+      name: "Website News Portal",
       description:
-        "Web-based platform game that allows users to play at any browser. This game is free to play and there are many challenging levels. This game is inspired by Mario Bros",
+        "A News Portal Website and Editorial CMS developed to support Napindo’s SEO strategy by publishing structured, search-engine-friendly content that helps improve organic visibility, topical authority, and traffic to Napindo’s websites.",
       tags: [
         {
-          name: "HTML",
+          name: "Next.js",
           color: "blue-text-gradient",
         },
         {
-          name: "CSS",
+          name: "Node.js",
           color: "green-text-gradient",
         },
         {
-          name: "JavaScript",
+          name: "Redis",
           color: "pink-text-gradient",
         },
-      ],
-      image: craigadventure,
-      source_code_link: "https://github.com/Zidanraka/Game-Platform-HTML-Javascript",
-    },
-    {
-      name: "Tiket Kapal Design",
-      description:
-        "Re-design Tiket Kapal Application from google playstore. This application allows people to book any transportation tickets",
-      tags: [
         {
-          name: "Figma",
-          color: "pink-text-gradient",
+          name: "PostgreSQL",
+          color: "orange-text-gradient",
         },
       ],
-      image: tiketkapal,
+      image: newsportal,
       source_code_link: "https://github.com/",
     },
     {
-      name: "SambalBini Design",
+      name: "Desktop Application Napindo Visitor Software 2",
       description:
-        "Design an F&B company profile website. This website allows user to see what menu or promos that SambalBini provide. In this website users also can order and book a table at any franchise.",
+        "Napindo Visitor Software 2 is a desktop application designed to streamline visitor, exhibitor, and company data management for exhibition events, featuring data entry, Excel import/export, reporting, and label printing.",
       tags: [
         {
-          name: "Figma",
+          name: "Electron.js",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "React.js",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Jsreport",
           color: "pink-text-gradient",
         },
+        {
+          name: "PostgreSQL",
+          color: "orange-text-gradient",
+        },
       ],
-      image: sambalbini,
+      image: desktopnapindo,
       source_code_link: "https://github.com/",
     },
     {
-      name: "Moksa",
+      name: "Website Company Moksa",
       description:
         "Design company profile website. This website allows user to see what this company do and provide. In this website admin also can post article in dashboard admin.",
       tags: [
@@ -226,6 +221,27 @@ import {
       ],
       image: moksaproject,
       source_code_link: "https://github.com/",
+    },
+    {
+      name: "Website Game Craig Adventure",
+      description:
+        "Web-based platform game that allows users to play at any browser. This game is free to play and there are many challenging levels. This game is inspired by Mario Bros",
+      tags: [
+        {
+          name: "HTML",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "CSS",
+          color: "green-text-gradient",
+        },
+        {
+          name: "JavaScript",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: craigadventure,
+      source_code_link: "https://github.com/Zidanraka/Game-Platform-HTML-Javascript",
     },
   ];
   

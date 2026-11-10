@@ -7,32 +7,29 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
-import css from "./tech/css.png";
-import figma from "./tech/figma.png";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
+import next from "./tech/next.png";
+import nuxt from "./tech/nuxt.png";
+import electron from "./tech/electron.png";
 import reactjs from "./tech/reactjs.png";
-import tailwind from "./tech/tailwind.png";
+import vite from "./tech/vite.png";
+import vue from "./tech/vue.png";
+import node from "./tech/node.png";
+import javascript from "./tech/javascript.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import threejs from "./tech/threejs.png";
+import tailwind from "./tech/tailwind.png";
+import postgresql from './tech/postgresql.png';
 import mysql from './tech/mysql.png';
-import bootstrap from './tech/bootstrap.png';
-import canva from './tech/canva.png';
-import photoshop from './tech/photoshop.png';
 
-import moksa from './company/moksa.png'
-import kominfo from './company/kominfo.png'
-import napindo from './company/napindo.jpg'
+import napindo from './company/napindo.png';
+import dealvise from './company/dealvise.png';
 
-import tiketkapal from './tiketkapal.png';
 import craigadventure from './craigadventure.webp'
-import sambalSmall from './sambalbini-640.webp'
-import sambalLarge from './sambalbini-960.webp'
 import moksaSmall from './moksa-640.webp'
 import moksaLarge from './moksa-960.webp'
+import desktopnapindo from './desktopnapindo.png'
+import newsportal from './newsportal.png'
 
-const sambalbini = [sambalSmall, sambalLarge]
 const moksaproject = [moksaSmall, moksaLarge]
 
 export {
@@ -44,24 +41,23 @@ export {
   github,
   menu,
   close,
-  css,
-  figma,
-  git,
-  html,
-  javascript,
+  next,
+  nuxt,
+  electron,
   reactjs,
-  tailwind,
+  vite,
+  vue,
+  node,
+  javascript,
   typescript,
   threejs,
+  tailwind,
+  postgresql,
   mysql,
-  bootstrap,
-  canva,
-  photoshop,
-  moksa,
-  kominfo,
   napindo,
-  tiketkapal,
+  dealvise,
   craigadventure,
-  sambalbini,
   moksaproject,
+  desktopnapindo,
+  newsportal,
 };

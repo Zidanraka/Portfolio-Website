@@ -1,7 +1,14 @@
+import { useEffect } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from './components'
 
 const App = () => {
+  useEffect(() => {
+    // The browser can resolve the fragment before React mounts the sections.
+    const anchor = document.getElementById(window.location.hash.slice(1))
+    anchor?.scrollIntoView({ behavior: 'instant' })
+  }, [])
+
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">

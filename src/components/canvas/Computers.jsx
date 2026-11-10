@@ -1,4 +1,5 @@
 import { Suspense, useEffect, useState } from 'react'
+import { useSceneVisibility } from './useSceneVisibility'
 import { Canvas } from '@react-three/fiber'
 import { meshBounds, OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import CanvasLoader from '../Loader'
@@ -20,6 +21,7 @@ const Computers = ({ isMobile }) => {
 }
 
 const ComputersCanvas = () => {
+  const { ref, visible } = useSceneVisibility(true)
   const [isMobile, setIsMobile] = useState(false)
   useEffect(() => {
     const mediaQuery = window.matchMedia(`
@@ -39,13 +41,15 @@ const ComputersCanvas = () => {
   }, [])
 
   return (
-    <Canvas frameloop='demand' shadows camera={{position: [20, 3, 5], fov: 25 }} gl={{preserveDrawingBuffer: true }}>
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2}/>
-        <Computers isMobile={isMobile} />
-      </Suspense>
-      <Preload all />
-    </Canvas>
+    <div ref={ref} className="h-full w-full">
+      <Canvas frameloop={visible ? 'demand' : 'never'} shadows camera={{position: [20, 3, 5], fov: 25 }} gl={{preserveDrawingBuffer: true }}>
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2}/>
+          <Computers isMobile={isMobile} />
+        </Suspense>
+        <Preload all />
+      </Canvas>
+    </div>
   )
 }
 

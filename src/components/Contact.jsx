@@ -5,51 +5,52 @@ import EarthCanvas from './canvas/Earth'
 import { SectionWrapper } from '../hoc'
 import { slideIn } from '../utils/motion'
 
+const emptyForm = { name: '', email: '', message: '' }
+const feedback = {
+  success: 'Thank you! Your message was sent.',
+  error: 'Your message could not be sent. Please try again.',
+}
+
 const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
-  const [loading, setLoading] = useState(false)
+  const submitting = useRef(false)
+  const [form, setForm] = useState(emptyForm)
+  const [status, setStatus] = useState('idle')
+  const loading = status === 'sending'
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     setForm({ ...form, [name]: value})
   }
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (submitting.current) return
 
-    import('@emailjs/browser')
-    .then(({ default: emailjs }) => emailjs.send(
-      'service_z5nd1ki',
-      'template_mqphimn',
-      {
-        from_name: form.name,
-        to_name: 'Zidan',
-        from_email: form.email,
-        reply_to: form.email,
-        to_email: 'zidanrakam11@gmai.com',
-        message: form.message,
-      },
-      'PG1ObxrlGu9mUz55r'
-    ))
-    .then(() => {
-      setLoading(false);
-      alert('Thankyou. I will get back to you as soon as possible.');
+    submitting.current = true
+    setStatus('sending')
 
-      setForm({
-        name: '',
-        email: '',
-        message: '',
-      })
-    }, (error) => {
-      setLoading(false)
-      console.log(error);
-      alert('Something went wrong.')
-    })
+    try {
+      const { default: emailjs } = await import('@emailjs/browser')
+      await emailjs.send(
+        'service_z5nd1ki',
+        'template_mqphimn',
+        {
+          from_name: form.name,
+          to_name: 'Zidan',
+          from_email: form.email,
+          reply_to: form.email,
+          to_email: 'zidanraka99@gmail.com',
+          message: form.message,
+        },
+        { publicKey: 'PG1ObxrlGu9mUz55r' }
+      )
+      setForm(emptyForm)
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    } finally {
+      submitting.current = false
+    }
   }
 
   return (
@@ -57,7 +58,7 @@ const Contact = () => {
       <motion.div variants={slideIn("left", "between", 0.2, 1)} className='flex-[0.75] bg-black-100 p-8 rounded-2xl'>
         <p className={styles.sectionSubText}>Get in Touch</p>
         <h2 className={styles.sectionHeadText}>Contact.</h2>
-        <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>
+        <form onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your Name</span>
             <input 
@@ -93,9 +94,14 @@ const Contact = () => {
             />
           </label>
 
-          <button type='submit' disabled={loading} className='bg-tertiary py-3 px-8 w-fit text-white font-bold shadow-md shadow-primary rounded-xl'>
-            {loading ? 'Sending...' : 'Send'}
-          </button>
+          <div>
+            <button type='submit' disabled={loading} className='bg-tertiary py-3 px-8 w-fit text-white font-bold shadow-md shadow-primary rounded-xl'>
+              {loading ? 'Sending...' : 'Send'}
+            </button>
+            <p role="status" className="mt-3 text-sm text-secondary empty:mt-0">
+              {feedback[status]}
+            </p>
+          </div>
         </form>
       </motion.div>
 

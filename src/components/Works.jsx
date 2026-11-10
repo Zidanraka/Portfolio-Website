@@ -8,6 +8,16 @@ import { fadeIn, textVariant } from '../utils/motion'
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   const imageSources = Array.isArray(image) ? image : null
+  const hasSource = source_code_link && source_code_link !== 'https://github.com/'
+  const SourceBadge = hasSource ? 'a' : 'span'
+  const sourceProps = hasSource
+    ? {
+      href: source_code_link,
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      'aria-label': `View ${name} source on GitHub (opens in a new tab)`,
+    }
+    : { role: 'img', 'aria-label': `Source link unavailable for ${name}` }
 
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -30,17 +40,12 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             className='w-full h-full object-cover rounded-2xl'
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <a
+            <SourceBadge
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center"
-              href={source_code_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={source_code_link === 'https://github.com/'
-                ? `Open GitHub from ${name} (opens in a new tab)`
-                : `View ${name} source on GitHub (opens in a new tab)`}
+              {...sourceProps}
             >
               <img src={github} alt="" loading="lazy" decoding="async" className='w-1/2 h-1/2 object-contain' />
-            </a>
+            </SourceBadge>
           </div>
         </div>
 

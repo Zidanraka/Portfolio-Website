@@ -30,12 +30,17 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             className='w-full h-full object-cover rounded-2xl'
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div 
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer" 
-              onClick={() => window.open(source_code_link, "_blank")}
+            <a
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center"
+              href={source_code_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={source_code_link === 'https://github.com/'
+                ? `Open GitHub from ${name} (opens in a new tab)`
+                : `View ${name} source on GitHub (opens in a new tab)`}
             >
-              <img src={github} alt="github" loading="lazy" decoding="async" className='w-1/2 h-1/2 object-contain' />
-            </div>
+              <img src={github} alt="" loading="lazy" decoding="async" className='w-1/2 h-1/2 object-contain' />
+            </a>
           </div>
         </div>
 

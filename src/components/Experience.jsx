@@ -1,5 +1,5 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { styles } from '../styles'
 import { experiences } from '../constants'
 import { SectionWrapper } from '../hoc'
@@ -15,6 +15,8 @@ const ExperienceCard = ({ experience }) => (
     icon={
       <div className='flex justify-center items-center w-full h-full'>
         <img
+          loading="lazy"
+          decoding="async"
           src={experience.icon}
           alt={experience.company_name}
           className='w-[60%] h-[60%] object-contain' 

@@ -1,8 +1,7 @@
 import { useState, useRef } from 'react'
-import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser'
+import { m as motion } from 'framer-motion'
 import { styles } from '../styles'
-import { EarthCanvas } from './canvas'
+import EarthCanvas from './canvas/Earth'
 import { SectionWrapper } from '../hoc'
 import { slideIn } from '../utils/motion'
 
@@ -23,7 +22,8 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs.send(
+    import('@emailjs/browser')
+    .then(({ default: emailjs }) => emailjs.send(
       'service_z5nd1ki',
       'template_mqphimn',
       {
@@ -35,7 +35,7 @@ const Contact = () => {
         message: form.message,
       },
       'PG1ObxrlGu9mUz55r'
-    )
+    ))
     .then(() => {
       setLoading(false);
       alert('Thankyou. I will get back to you as soon as possible.');

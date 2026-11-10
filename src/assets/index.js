@@ -27,8 +27,13 @@ import napindo from './company/napindo.jpg'
 
 import tiketkapal from './tiketkapal.png';
 import craigadventure from './craigadventure.webp'
-import sambalbini from './sambalbini.png'
-import moksaproject from './moksa.png'
+import sambalSmall from './sambalbini-640.webp'
+import sambalLarge from './sambalbini-960.webp'
+import moksaSmall from './moksa-640.webp'
+import moksaLarge from './moksa-960.webp'
+
+const sambalbini = [sambalSmall, sambalLarge]
+const moksaproject = [moksaSmall, moksaLarge]
 
 export {
   logo,

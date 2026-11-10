@@ -1,7 +1,6 @@
-import { motion } from 'framer-motion'
 import { styles } from '../styles'
 import { TypeAnimation } from 'react-type-animation'
-import { ComputersCanvas } from './canvas'
+import ComputersCanvas from './canvas/Computers'
 
 const Hero = () => {
   return (
